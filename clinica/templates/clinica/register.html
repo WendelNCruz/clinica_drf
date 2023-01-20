@@ -1,0 +1,17 @@
+{% extends 'clinica/index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container py-5">
+    <h1>Registrar</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ register_form|crispy }}                    
+        <button class="btn btn-primary" type="submit">Registrar</button>
+    </form>
+    <p class="text-center">Se Voce ja possui uma conta, <a href="/login">login</a> em vez disso.</p>
+</div>
+
+{% endblock content %}
